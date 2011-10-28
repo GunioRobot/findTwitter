@@ -287,19 +287,19 @@ class TextHelperTest extends CakeTestCase {
 		$expected = '...with test text...';
 		$result = $this->Text->excerpt($text, 'test', 9, '...');
 		$this->assertEqual($expected, $result);
-		
+
 		$expected = 'This is a...';
 		$result = $this->Text->excerpt($text, 'not_found', 9, '...');
 		$this->assertEqual($expected, $result);
-		
+
 		$expected = 'This is a phras...';
 		$result = $this->Text->excerpt($text, null, 9, '...');
 		$this->assertEqual($expected, $result);
-		
+
 		$expected = $text;
 		$result = $this->Text->excerpt($text, null, 200, '...');
 		$this->assertEqual($expected, $result);
-		
+
 		$expected = '...phrase...';
 		$result = $this->Text->excerpt($text, 'phrase', 2, '...');
 		$this->assertEqual($expected, $result);

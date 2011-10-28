@@ -32,7 +32,7 @@
  * @subpackage    cake.cake.console.libs
  */
 class PersisterTwoBehaviorBehavior extends ModelBehavior {
-	
-	
+
+
 }
 ?>

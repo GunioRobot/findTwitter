@@ -99,7 +99,7 @@
                 Set them up with fairly tight expectations and you will
                 hardly need manual assertions at all.
             </p>
-        
+
         <p><a class="target" name="creation"><h2>Creating mock objects</h2></a></p>
             <p>
                 In the same way that we create server stubs, all we need is an
@@ -108,10 +108,10 @@
 <strong>class DatabaseConnection {
     function DatabaseConnection() {
     }
-    
+
     function query() {
     }
-    
+
     function selectQuery() {
     }
 }</strong>
@@ -138,7 +138,7 @@ require_once('database_connection.php');
 Mock::generate('DatabaseConnection');
 <strong>
 class MyTestCase extends UnitTestCase {
-    
+
     function testSomething() {
         $connection = &amp;new MockDatabaseConnection();
     }
@@ -198,7 +198,7 @@ class MyTestCase extends UnitTestCase {
 class Iterator {
     function Iterator() {
     }
-    
+
     function next() {
     }
 }
@@ -211,7 +211,7 @@ class Iterator {
 Mock::generate('Iterator');
 
 class IteratorTest extends UnitTestCase() {
-    
+
     function testASequence() {<strong>
         $iterator = &amp;new MockIterator();
         $iterator-&gt;setReturnValue('next', false);
@@ -239,7 +239,7 @@ class IteratorTest extends UnitTestCase() {
 class Configuration {
     function Configuration() {
     }
-    
+
     function getValue($key) {
     }
 }
@@ -308,7 +308,7 @@ class Thing {
 class Vector {
     function Vector() {
     }
-    
+
     function get($index) {
     }
 }
@@ -357,21 +357,21 @@ Mock::generate('DatabaseConnection');
 Mock::generate('ResultIterator');
 
 class DatabaseTest extends UnitTestCase {
-    
+
     function testUserFinder() {<strong>
         $result = &amp;new MockResultIterator();
         $result-&gt;setReturnValue('next', false);
         $result-&gt;setReturnValueAt(0, 'next', array(1, 'tom'));
         $result-&gt;setReturnValueAt(1, 'next', array(3, 'dick'));
         $result-&gt;setReturnValueAt(2, 'next', array(6, 'harry'));
-        
+
         $connection = &amp;new MockDatabaseConnection();
         $connection-&gt;setReturnValue('query', false);
         $connection-&gt;setReturnReference(
                 'query',
                 $result,
                 array('select id, name from users'));</strong>
-                
+
         $finder = &amp;new UserFinder($connection);
         $this-&gt;assertIdentical(
                 $finder-&gt;findNames(),
@@ -390,7 +390,7 @@ class DatabaseTest extends UnitTestCase {
                 being tested here, to come up with goods.
                 A very precise test and not a real database in sight.
             </p>
-        
+
         <p><a class="target" name="expectations"><h2>Mocks as critics</h2></a></p>
             <p>
                 Although the server stubs approach insulates your tests from
@@ -412,7 +412,7 @@ class DatabaseTest extends UnitTestCase {
     function SessionPool() {
         ...
     }
-    
+
     function &amp;findSession($cookie) {
         ...
     }
@@ -430,7 +430,7 @@ class Log {
     function Log() {
         ...
     }
-    
+
     function message() {
         ...
     }
@@ -440,7 +440,7 @@ class LoggingSessionPool {
     function LoggingSessionPool(&amp;$session_pool, &amp;$log) {
         ...
     }
-    
+
     function &amp;findSession($cookie) {
         ...
     }
@@ -494,10 +494,10 @@ class LoggingSessionPoolTest extends UnitTestCase {
         $pool = &amp;new MockSessionPool();
         $pool-&gt;setReturnReference('findSession', $session);
         $pool-&gt;expectOnce('findSession', array('abc'));
-        
+
         $log = &amp;new MockLog();
         $log-&gt;expectOnce('message', array('Starting session abc'));
-        
+
         $logging_pool = &amp;new LoggingSessionPool($pool, $log);
         $this-&gt;assertReference($logging_pool-&gt;findSession('abc'), $session);</strong>
     }
@@ -635,7 +635,7 @@ class LoggingSessionPoolTest extends UnitTestCase {
                 Also the original failure message can be embedded in the output
                 as "%s".
             </p>
-        
+
         <p><a class="target" name="approaches"><h2>Other approaches</h2></a></p>
             <p>
                 There are three approaches to creating mocks including the one
@@ -710,7 +710,7 @@ class LoggingSessionPoolTest extends UnitTestCase {
                 or you are getting frequent integration problems at later
                 stages of testing.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

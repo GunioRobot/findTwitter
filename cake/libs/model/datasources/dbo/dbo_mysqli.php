@@ -75,9 +75,9 @@ class DboMysqli extends DboMysqlBase {
 		if ($this->connection !== false) {
 			$this->connected = true;
 		}
-		
+
 		$this->_useAlias = (bool)version_compare(mysqli_get_server_info($this->connection), "4.1", ">=");
-		
+
 		if (!empty($config['encoding'])) {
 			$this->setEncoding($config['encoding']);
 		}
@@ -336,11 +336,11 @@ class DboMysqli extends DboMysqlBase {
 	function length($real) {
 		$col = str_replace(array(')', 'unsigned'), '', $real);
 		$limit = null;
-	
+
 		if (strpos($col, '(') !== false) {
 			list($col, $limit) = explode('(', $col);
 		}
-	
+
 		if ($limit != null) {
 			return intval($limit);
 		}

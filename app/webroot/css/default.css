@@ -145,7 +145,7 @@ form {
 }
 
 #content .search {
-  background-color: #ccf; 
+  background-color: #ccf;
   border-top: 5px #00f solid;
   border-bottom: 5px #00f solid;
   margin-bottom: 20px;
@@ -158,7 +158,7 @@ form {
 
 #footer {
   width: 500px;
-  background-color: #ccf; 
+  background-color: #ccf;
   border-bottom: 5px #00f solid;
   height: 6em;
   margin: 0px auto;

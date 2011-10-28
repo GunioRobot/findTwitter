@@ -187,7 +187,7 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 			'Email' => array('ports' => 'open')
 		);
 		$this->assertEqual($Controller->components, $expected, 'Components are unexpected %s');
-		
+
 		$expected = array(
 			'Javascript',
 			'MergeVar' => array('format' => 'html', 'terse')

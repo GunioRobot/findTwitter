@@ -312,12 +312,12 @@ class RouterTest extends CakeTestCase {
 		Router::reload();
 		$_back = Configure::read('App.baseUrl');
 		Configure::write('App.baseUrl', '/');
-		
+
 		Router::setRequestInfo(array(array(), array('base' => '/')));
 		$result = Router::normalize('users/login');
 		$this->assertEqual($result, '/users/login');
 		Configure::write('App.baseUrl', $_back);
-		
+
 		Router::reload();
 		Router::setRequestInfo(array(array(), array('base' => 'beer')));
 		$result = Router::normalize('beer/admin/beers_tags/add');
@@ -1076,9 +1076,9 @@ class RouterTest extends CakeTestCase {
 
 		Router::reload();
 		Router::setRequestInfo(array(
-			array('admin' => true, 'controller' => 'controller', 'action' => 'action', 
+			array('admin' => true, 'controller' => 'controller', 'action' => 'action',
 				'form' => array(), 'url' => array(), 'plugin' => null),
-			array('base' => '/', 'here' => '/', 'webroot' => '/base/', 'passedArgs' => array(), 
+			array('base' => '/', 'here' => '/', 'webroot' => '/base/', 'passedArgs' => array(),
 				'argSeparator' => ':', 'namedArgs' => array())
 		));
 		Router::parse('/');
@@ -1380,11 +1380,11 @@ class RouterTest extends CakeTestCase {
 		$result = Router::url(array('controller' => 'others', 'action' => 'edit', 1, 'protected' => true));
 		$expected = '/protected/others/edit/1';
 		$this->assertEqual($result, $expected);
-		
+
 		$result = Router::url(array('controller' => 'others', 'action' => 'edit', 1, 'protected' => true, 'page' => 1));
 		$expected = '/protected/others/edit/1/page:1';
 		$this->assertEqual($result, $expected);
-		
+
 		Router::connectNamed(array('random'));
 		$result = Router::url(array('controller' => 'others', 'action' => 'edit', 1, 'protected' => true, 'random' => 'my-value'));
 		$expected = '/protected/others/edit/1/random:my-value';
@@ -1688,7 +1688,7 @@ class RouterTest extends CakeTestCase {
  * testCurentRoute
  *
  * This test needs some improvement and actual requestAction() usage
- * 
+ *
  * @return void
  * @access public
  */

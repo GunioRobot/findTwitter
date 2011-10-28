@@ -47,7 +47,7 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 A partial mock is simply a pattern to alleviate a specific problem
                 in testing with mock objects,
@@ -56,7 +56,7 @@
                 It is included with SimpleTest because I have found it useful
                 on more than one occasion and has saved a lot of work at that point.
             </p>
-        
+
         <p><a class="target" name="inject"><h2>The mock injection problem</h2></a></p>
             <p>
                 When one object uses another it is very simple to just pass a mock
@@ -75,7 +75,7 @@
 <pre>
 <strong>&lt;?php
 require_once('socket.php');
-    
+
 class Telnet {
     ...
     function &amp;connect($ip, $port, $username, $password) {
@@ -104,7 +104,7 @@ class Telnet {
 <pre>
 &lt;?php
 require_once('socket.php');
-    
+
 class Telnet {
     ...
     <strong>function &amp;connect(&amp;$socket, $username, $password) {
@@ -140,7 +140,7 @@ class TelnetTest extends UnitTestCase {
 <pre>
 &lt;?php
 require_once('socket.php');
-    
+
 class Telnet {
     ...<strong>
     function &amp;connect($ip, $port, $username, $password, $socket = false) {
@@ -180,7 +180,7 @@ class TelnetTest extends UnitTestCase {
 <pre>
 &lt;?php
 require_once('socket.php');
-    
+
 class Telnet {<strong>
    function Telnet(&amp;$network) {
         $this-&gt;_network = &amp;$network;
@@ -222,7 +222,7 @@ class TelnetTest extends UnitTestCase {
             <p>
                 Is there a middle ground?
             </p>
-        
+
         <p><a class="target" name="creation"><h2>Protected factory method</h2></a></p>
             <p>
                 There is a way we can circumvent the problem without creating
@@ -232,7 +232,7 @@ class TelnetTest extends UnitTestCase {
 <pre>
 &lt;?php
 require_once('socket.php');
-    
+
 class Telnet {
     ...
     function &amp;connect($ip, $port, $username, $password) {<strong>
@@ -240,7 +240,7 @@ class Telnet {
         $socket-&gt;read( ... );
         ...
     }<strong>
-        
+
     function &amp;_createSocket($ip, $port) {
         return new Socket($ip, $port);
     }</strong>
@@ -255,12 +255,12 @@ class Telnet {
 <pre>
 <strong>class TelnetTestVersion extends Telnet {
     var $_mock;
-    
+
     function TelnetTestVersion(&amp;$mock) {
         $this-&gt;_mock = &amp;$mock;
         $this-&gt;Telnet();
     }
-    
+
     function &amp;_createSocket() {
         return $this-&gt;_mock;
     }
@@ -299,7 +299,7 @@ class TelnetTest extends UnitTestCase {
                 It seems we are likely to do this often, can
                 we automate the subclass creation?
             </p>
-        
+
         <p><a class="target" name="partial"><h2>A partial mock</h2></a></p>
             <p>
                 Of course the answer is "yes" or I would have stopped writing
@@ -374,7 +374,7 @@ class TelnetTest extends UnitTestCase {
 }
 </pre>
             </p>
-        
+
         <p><a class="target" name="less"><h2>Testing less than a class</h2></a></p>
             <p>
                 The mocked out methods don't have to be factory methods,
@@ -396,7 +396,7 @@ class TelnetTest extends UnitTestCase {
                 It's all going to come down to the coding standards of your
                 project to decide which mechanism you use.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

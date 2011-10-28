@@ -118,7 +118,7 @@
                 Ceci instancie le scénario de test avant que
                 la suite de test ne soit lancée.
                 Ça pourrait devenir assez onéreux avec
-                un grand nombre de scénarios de test : 
+                un grand nombre de scénarios de test :
                 il existe donc une autre méthode qui instancie
                 la classe uniquement quand elle devient nécessaire...
 <pre>
@@ -179,7 +179,7 @@
                     </li>
                 </ol>
             </p>
-        
+
         <p><a class="target" name="plus-haut"><h2>Groupements de plus haut niveau</h2></a></p>
             <p>
                 La technique ci-dessus place tous les scénarios de test
@@ -273,18 +273,18 @@
                 Comme les scénarios de test normaux,
                 un <span class="new_code">GroupTest</span> peut être chargé avec la méthode
                 <span class="new_code">GroupTest::addTestFile()</span>.
-<pre>  
-&lt;?php   
-    define('RUNNER', true); 
-        
-    $test = &amp;new BigGroupTest('Big group');<strong> 
-    $test-&gt;addTestFile('file_group_test.php');  
-    $test-&gt;addTestFile(...);</strong>   
-    $test-&gt;run(new HtmlReporter()); 
-?&gt;  
+<pre>
+&lt;?php
+    define('RUNNER', true);
+
+    $test = &amp;new BigGroupTest('Big group');<strong>
+    $test-&gt;addTestFile('file_group_test.php');
+    $test-&gt;addTestFile(...);</strong>
+    $test-&gt;run(new HtmlReporter());
+?&gt;
 </pre>
             </p>
-        
+
         <p><a class="target" name="heritage"><h2>Intégrer des scénarios de test hérités</h2></a></p>
             <p>
                 Si vous avez déjà des tests unitaires pour votre code
@@ -305,7 +305,7 @@
     function ConfigFileTest() {
         $this-&gt;TestCase('Config file test');
     }
-    
+
     function testContents() {
         $config = new ConfigFile('test.conf');
         $this-&gt;assertRegexp('/me/', $config-&gt;getValue('username'));
@@ -353,7 +353,7 @@
                 ça voudrait dire la livrer avec des scénarios de
                 test compatibles avec PEAR::PhpUnit.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

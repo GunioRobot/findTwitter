@@ -139,7 +139,7 @@ Test cases run: 1/1, Failures: 0, Exceptions: 0
                 a bien été renvoyée. Nous ne savons pas encore
                 s'il s'agit de celle que nous souhaitions.
             </p>
-        
+
         <p><a class="target" name="contenu"><h2>Tester le contenu d'une page</h2></a></p>
             <p>
                 Pour obtenir la confirmation que la page téléchargée
@@ -147,7 +147,7 @@ Test cases run: 1/1, Failures: 0, Exceptions: 0
                 nous devons vérifier son contenu.
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {<strong>
         $this-&gt;get('http://www.lastcraft.com/');
         $this-&gt;assertWantedPattern('/why the last craft/i');</strong>
@@ -258,7 +258,7 @@ class TestOfLastcraft extends WebTestCase {
                 bien dans un liste de valeurs possibles...
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {
         $this-&gt;get('http://simpletest.sourceforge.net/');<strong>
         $this-&gt;assertResponse(200);</strong>
@@ -279,7 +279,7 @@ class TestOfLastcraft extends WebTestCase {
                 il reste possible de les supprimer...
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {<strong>
         $this-&gt;setMaximumRedirects(0);</strong>
         $this-&gt;get('http://simpletest.sourceforge.net/');
@@ -300,7 +300,7 @@ Test cases run: 1/1, Failures: 1, Exceptions: 0
                 Nous pouvons modifier le test pour accepter les redirections...
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {
         $this-&gt;setMaximumRedirects(0);
         $this-&gt;get('http://simpletest.sourceforge.net/');
@@ -310,7 +310,7 @@ class TestOfLastcraft extends WebTestCase {
 </pre>
                 Maitenant ça passe.
             </p>
-        
+
         <p><a class="target" name="navigation"><h2>Navigeur dans un site web</h2></a></p>
             <p>
                 Les utilisateurs ne naviguent pas souvent en tapant les URLs,
@@ -423,7 +423,7 @@ class TestOfLastcraft extends WebTestCase {
                 </tbody></table>
             </p>
             <p>
-                Les paramètres dans les méthodes <span class="new_code">get()</span>, 
+                Les paramètres dans les méthodes <span class="new_code">get()</span>,
                 <span class="new_code">post()</span> et <span class="new_code">head()</span> sont optionnels.
                 Le téléchargement via  HTTP HEAD ne modifie pas
                 le contexte du navigateur, il se limite au chargement des cookies.
@@ -463,7 +463,7 @@ class TestOfLastcraft extends WebTestCase {
                 <a href="form_testing_documentation.html">
                 des outils pour tester des formulaires web</a>.
             </p>
-        
+
         <p><a class="target" name="requete"><h2>Modifier la requête</h2></a></p>
             <p>
                 Bien que SimpleTest n'ait pas comme objectif
@@ -517,7 +517,7 @@ class TestOfLastcraft extends WebTestCase {
 </tr>
                 </tbody></table>
             </p>
-        
+
     </div>
         References and related information...
         <ul>

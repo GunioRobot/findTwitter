@@ -10,7 +10,7 @@ class Twitter extends AppModel {
   const LANG_JA = 'ja';
 
   /**
-   * @var string 
+   * @var string
    */
   protected $lang = null;
 

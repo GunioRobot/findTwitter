@@ -44,13 +44,13 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 Le composant de navigation web de SimpleTest peut être utilisé
                 non seulement à l'extérieur de la classe <span class="new_code">WebTestCase</span>,
                 mais aussi indépendamment du framework SimpleTest lui-même.
             </p>
-        
+
         <p><a class="target" name="script"><h2>Le navigateur scriptable</h2></a></p>
             <p>
                 Vous pouvez utiliser le navigateur web dans des scripts PHP
@@ -62,7 +62,7 @@
 <pre>
 &lt;?php
     require_once('simpletest/browser.php');
-    
+
     $browser = &amp;new SimpleBrowser();
     $browser-&gt;get('http://php.net/');
     $browser-&gt;clickLink('reporting bugs');
@@ -96,7 +96,7 @@
                     <tr>
 <td><span class="new_code">useProxy($proxy, $username, $password)</span></td>
 <td>Utilise ce proxy à partir de maintenant</td>
-</tr> 
+</tr>
                     <tr>
 <td><span class="new_code">head($url, $parameters)</span></td>
 <td>Effectue une requête HEAD</td>
@@ -267,7 +267,7 @@
                 le contenu viendra de celle-ci uniquement.
                 Cela comprend les liens à cliquer et les formulaires à transmettre.
             </p>
-        
+
         <p><a class="target" name="deboguer"><h2>Où sont les erreurs ?</h2></a></p>
             <p>
                 Toute cette masse de fonctionnalités est géniale
@@ -337,7 +337,7 @@
                 <span class="new_code">SimpleBrowser::setFrameFocus()</span> : ensuite on utilisera
                 <span class="new_code">SimpleBrowser::getRequest()</span>, etc. pour voir ce qui se passe.
             </p>
-        
+
         <p><a class="target" name="unit"><h2>Tests unitaires complexes avec des navigateurs multiples</h2></a></p>
             <p>
                 Tout ce qui peut être fait dans
@@ -383,7 +383,7 @@ class TestOfSecurity extends UnitTestCase {
         $first-&gt;setField('password', 'Secret');
         $first-&gt;clickSubmit('Enter');
         $this-&gt;assertEqual($first-&gt;getTitle(), 'Welcome');
-        
+
         $second = &amp;new SimpleBrowser();
         $second-&gt;get('http://my-site.com/login.php');
         $second-&gt;setField('name', 'Me');
@@ -397,7 +397,7 @@ class TestOfSecurity extends UnitTestCase {
                 quand vous souhaitez écrire des scénarios de test en utilisant
                 un autre outil que SimpleTest.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

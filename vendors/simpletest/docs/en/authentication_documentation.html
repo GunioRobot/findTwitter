@@ -44,14 +44,14 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 One of the trickiest, and yet most important, areas
                 of testing web sites is the security.
                 Testing these schemes is one of the core goals of
                 the SimpleTest web tester.
             </p>
-        
+
         <p><a class="target" name="basic"><h2>Basic HTTP authentication</h2></a></p>
             <p>
                 If you fetch a page protected by basic authentication then
@@ -157,7 +157,7 @@ class AuthenticationTest extends WebTestCase {
                 Digest authentication and NTLM authentication may be added
                 in the future.
             </p>
-        
+
         <p><a class="target" name="cookies"><h2>Cookies</h2></a></p>
             <p>
                 Basic authentication doesn't give enough control over the
@@ -250,7 +250,7 @@ class LogInTest extends WebTestCase {
 </pre>
                 Is your site protected from this attack?
             </p>
-        
+
         <p><a class="target" name="session"><h2>Browser sessions</h2></a></p>
             <p>
                 If you are testing an authentication system a critical piece
@@ -265,7 +265,7 @@ class LogInTest extends WebTestCase {
         $this-&gt;setField('p', 'Secret');
         $this-&gt;click('Log in');
         $this-&gt;assertText('Welcome Me');<strong>
-        
+
         $this-&gt;restart();
         $this-&gt;get('http://www.my-site.com/restricted.php');
         $this-&gt;assertText('Access denied');</strong>
@@ -308,7 +308,7 @@ class LogInTest extends WebTestCase {
                 hour older and any that pass their expiry will have
                 disappeared.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

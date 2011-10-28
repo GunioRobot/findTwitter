@@ -214,11 +214,11 @@ class JavascriptHelper extends AppHelper {
 		$options = $this->_blockOptions;
 		$this->_blockOptions = array();
 		$this->inBlock = false;
-		
+
 		if (empty($script)) {
 			return null;
 		}
-		
+
 		return $this->codeBlock($script, $options);
 	}
 /**

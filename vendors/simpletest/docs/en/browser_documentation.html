@@ -44,13 +44,13 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 SimpleTest's web browser component can be used not just
                 outside of the <span class="new_code">WebTestCase</span> class, but also
                 independently of the SimpleTest framework itself.
             </p>
-        
+
         <p><a class="target" name="scripting"><h2>The Scriptable Browser</h2></a></p>
             <p>
                 You can use the web browser in PHP scripts to confirm
@@ -61,7 +61,7 @@
 <pre>
 <strong>&lt;?php
 require_once('simpletest/browser.php');
-    
+
 $browser = &amp;new SimpleBrowser();
 $browser-&gt;get('http://php.net/');
 $browser-&gt;click('reporting bugs');
@@ -261,7 +261,7 @@ print $matches[1];
                 that frame only.
                 This includes links to click and forms to submit.
             </p>
-        
+
         <p><a class="target" name="debug"><h2>What went wrong?</h2></a></p>
             <p>
                 All of this functionality is great when we actually manage to fetch pages,
@@ -340,7 +340,7 @@ print $matches[1];
                 and you can then use <span class="new_code">SimpleBrowser::getRequest()</span>, etc to
                 see what happened.
             </p>
-        
+
         <p><a class="target" name="unit"><h2>Complex unit tests with multiple browsers</h2></a></p>
             <p>
                 Anything that could be done in a
@@ -386,7 +386,7 @@ class TestOfSecurity extends UnitTestCase {
         $first-&gt;setField('password', 'Secret');
         $first-&gt;click('Enter');
         $this-&gt;assertEqual($first-&gt;getTitle(), 'Welcome');
-        
+
         $second = &amp;new SimpleBrowser();
         $second-&gt;get('http://my-site.com/login.php');
         $second-&gt;setField('name', 'Me');
@@ -400,7 +400,7 @@ class TestOfSecurity extends UnitTestCase {
                 directly when you want to write test cases using a different
                 test tool than SimpleTest.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

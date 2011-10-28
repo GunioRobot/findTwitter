@@ -54,8 +54,8 @@
         </li>
 </ul>
 <div class="content">
-        
-        
+
+
             <p>
                 The following assumes that you are familiar with the concept
                 of unit testing as well as the PHP web development language.
@@ -67,7 +67,7 @@
                 example test cases see the
                 <a href="http://www.lastcraft.com/first_test_tutorial.php">unit testing tutorial</a>.
             </p>
-        
+
         <p><a class="target" name="unit"><h2>Using the tester quickly</h2></a></p>
             <p>
                 Amongst software testing tools, a unit tester is the one
@@ -209,7 +209,7 @@ class Log {
                 For more information about <span class="new_code">UnitTestCase</span>, see
                 the <a href="unit_test_documentation.html">unit test documentation</a>.
             </p>
-        
+
         <p><a class="target" name="group"><h2>Building test suites</h2></a></p>
             <p>
                 It is unlikely in a real application that we will only ever run
@@ -283,7 +283,7 @@ class AllTests extends <strong>TestSuite</strong> {
                 For more information about building test suites,
                 see the <a href="group_test_documentation.html">test suite documentation</a>.
             </p>
-        
+
         <p><a class="target" name="mock"><h2>Using mock objects</h2></a></p>
             <p>
                 Let's move further into the future and do something really complicated.
@@ -317,15 +317,15 @@ require_once('../classes/log.php');
 <strong>require_once('../classes/session_pool.php');</strong>
 
 class <strong>TestOfSessionLogging</strong> extends UnitTestCase {
-    
+
     function setUp() {
         <strong>@unlink('/temp/test.log');</strong>
     }
-    
+
     function tearDown() {
         <strong>@unlink('/temp/test.log');</strong>
     }
-    
+
     function testLoggingInIsLogged() {
         <strong>$log = new Log('/temp/test.log');
         $session_pool = &amp;new SessionPool($log);
@@ -381,7 +381,7 @@ require_once('../classes/session_pool.php');
 <strong>Mock::generate('Log');</strong>
 
 class TestOfSessionLogging extends UnitTestCase {
-    
+
     function testLoggingInIsLogged() {<strong>
         $log = &amp;new MockLog();
         $log-&gt;expectOnce('message', array('User fred logged in.'));</strong>
@@ -426,7 +426,7 @@ class TestOfSessionLogging extends UnitTestCase {
                 For more information about mocking and stubbing, see the
                 <a href="mock_objects_documentation.html">mock objects documentation</a>.
             </p>
-        
+
         <p><a class="target" name="web"><h2>Web page testing</h2></a></p>
             <p>
                 One of the requirements of web sites is that they produce web
@@ -493,7 +493,7 @@ class TestOfRankings extends WebTestCase {
             <p>
                 <a href="http://sourceforge.net/projects/simpletest/"><img src="http://sourceforge.net/sflogo.php?group_id=76550&amp;type=5" width="210" height="62" border="0" alt="SourceForge.net Logo"></a>
             </p>
-        
+
     </div>
         References and related information...
         <ul>

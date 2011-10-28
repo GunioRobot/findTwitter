@@ -135,14 +135,14 @@ Test cases run: 1/1, Failures: 0, Exceptions: 0
                 returned.
                 We don't yet know if it was the right one.
             </p>
-        
+
         <p><a class="target" name="content"><h2>Testing page content</h2></a></p>
             <p>
                 To confirm that the page we think we are on is actually the
                 page we are on, we need to verify the page content.
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {<strong>
         $this-&gt;get('http://www.lastcraft.com/');
         $this-&gt;assertText('Why the last craft');</strong>
@@ -262,7 +262,7 @@ class TestOfLastcraft extends WebTestCase {
                 is in a list of allowed values...
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testRedirects() {
         $this-&gt;get('http://www.lastcraft.com/test/redirect.php');
         $this-&gt;assertResponse(200);&lt;/strong&gt;
@@ -282,7 +282,7 @@ class TestOfLastcraft extends WebTestCase {
                 be disabled...
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {<strong>
         $this-&gt;setMaximumRedirects(0);</strong>
         $this-&gt;get('http://www.lastcraft.com/test/redirect.php');
@@ -303,7 +303,7 @@ Test cases run: 1/1, Failures: 1, Exceptions: 0
                 We can modify the test to correctly assert redirects with...
 <pre>
 class TestOfLastcraft extends WebTestCase {
-    
+
     function testHomepage() {
         $this-&gt;setMaximumRedirects(0);
         $this-&gt;get('http://www.lastcraft.com/test/redirect.php');
@@ -313,7 +313,7 @@ class TestOfLastcraft extends WebTestCase {
 </pre>
                 This now passes.
             </p>
-        
+
         <p><a class="target" name="navigation"><h2>Navigating a web site</h2></a></p>
             <p>
                 Users don't often navigate sites by typing in URLs, but by
@@ -486,7 +486,7 @@ class TestOfLastcraft extends WebTestCase {
                 <a href="form_testing_documentation.html">tools for testing web forms</a>
                 as well.
             </p>
-        
+
         <p><a class="target" name="request"><h2>Modifying the request</h2></a></p>
             <p>
                 Although SimpleTest does not have the goal of testing networking
@@ -537,7 +537,7 @@ class TestOfLastcraft extends WebTestCase {
                 </tbody></table>
                 These methods are principally for debugging.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

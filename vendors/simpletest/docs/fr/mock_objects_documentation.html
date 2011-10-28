@@ -103,7 +103,7 @@
                 Mettez-les sur pied avec des attentes assez précises
                 et vous verrez que vous n'aurez presque plus d'assertion à écrire manuellement.
             </p>
-        
+
         <p><a class="target" name="creation"><h2>Créer des objets fantaisie</h2></a></p>
             <p>
                 Comme pour la création des bouchons serveur, tout ce dont
@@ -113,10 +113,10 @@
 <strong>class DatabaseConnection {
     function DatabaseConnection() {
     }
-    
+
     function query() {
     }
-    
+
     function selectQuery() {
     }
 }</strong>
@@ -142,7 +142,7 @@ require_once('database_connection.php');
 Mock::generate('DatabaseConnection');
 <strong>
 class MyTestCase extends UnitTestCase {
-    
+
     function testSomething() {
         $connection = &amp;new MockDatabaseConnection($this);
     }
@@ -158,7 +158,7 @@ class MyTestCase extends UnitTestCase {
                 que les bouchons ne sont que rarement utilisés
                 si des objets fantaisie sont disponibles.
             </p>
-        
+
         <p><a class="target" name="bouchon"><h2>Objets fantaisie en action</h2></a></p>
             <p>
                 La version fantaisie d'une classe contient
@@ -195,7 +195,7 @@ class MyTestCase extends UnitTestCase {
 class Iterator {
     function Iterator() {
     }
-    
+
     function next() {
     }
 }
@@ -208,7 +208,7 @@ class Iterator {
 Mock::generate('Iterator');
 
 class IteratorTest extends UnitTestCase() {
-    
+
     function testASequence() {<strong>
         $iterator = &amp;new MockIterator($this);
         $iterator-&gt;setReturnValue('next', false);
@@ -235,7 +235,7 @@ class IteratorTest extends UnitTestCase() {
 class Configuration {
     function Configuration() {
     }
-    
+
     function getValue($key) {
     }
 }
@@ -282,7 +282,7 @@ class Thing {
 class Vector {
     function Vector() {
     }
-    
+
     function get($index) {
     }
 }
@@ -298,7 +298,7 @@ $vector-&gt;setReturnReference('get', $thing, array(12));</strong>
                 de <span class="new_code">$vector-&gt;get(12)</span>
                 le même <span class="new_code">$thing</span> sera renvoyé.
             </p>
-        
+
         <p><a class="target" name="attentes"><h2>Objets fantaisie en critique</h2></a></p>
             <p>
                 Même si les bouchons serveur vous isolent
@@ -320,7 +320,7 @@ $vector-&gt;setReturnReference('get', $thing, array(12));</strong>
     function SessionPool() {
         ...
     }
-    
+
     function &amp;findSession($cookie) {
         ...
     }
@@ -338,7 +338,7 @@ class Log {
     function Log() {
         ...
     }
-    
+
     function message() {
         ...
     }
@@ -348,7 +348,7 @@ class LoggingSessionPool {
     function LoggingSessionPool(&amp;$session_pool, &amp;$log) {
         ...
     }
-    
+
     function &amp;findSession($cookie) {
         ...
     }
@@ -403,10 +403,10 @@ class LoggingSessionPoolTest extends UnitTestCase {
         $pool = &amp;new MockSessionPool($this);
         $pool-&gt;setReturnReference('findSession', $session);
         $pool-&gt;expectOnce('findSession', array('abc'));
-        
+
         $log = &amp;new MockLog($this);
         $log-&gt;expectOnce('message', array('Starting session abc'));
-        
+
         $logging_pool = &amp;new LoggingSessionPool($pool, $log);
         $this-&gt;assertReference($logging_pool-&gt;findSession('abc'), $session);
         $pool-&gt;tally();
@@ -563,7 +563,7 @@ class LoggingSessionPoolTest extends UnitTestCase {
                 Par ailleurs le message d'échec original peut être inclus
                 dans le résultat avec "%s".
             </p>
-        
+
         <p><a class="target" name="approches"><h2>D'autres approches</h2></a></p>
             <p>
                 Il existe trois approches pour créer des objets
@@ -644,7 +644,7 @@ class LoggingSessionPoolTest extends UnitTestCase {
                 ou si vous avez de fréquents problèmes d'intégration
                 plus tard dans les étapes de test.
             </p>
-        
+
         <p><a class="target" name="autres_testeurs"><h2>Je pense que SimpleTest pue !</h2></a></p>
             <p>
                 Mais au moment d'écrire ces lignes c'est le seul
@@ -664,7 +664,7 @@ class LoggingSessionPoolTest extends UnitTestCase {
 class PHPUnit {
     function PHPUnit() {
     }
-    
+
     function assertion($message, $assertion) {
     }
     ...
@@ -689,12 +689,12 @@ $unit_test&gt;assertion('I hope this file exists', file_exists('my_file'));
 <pre>
 <strong>&lt;?php
     require_once('simpletest/mock_objects.php');
-    
+
     class MyMock extends SimpleMock() {
         function MyMock(&amp;$test, $wildcard) {
             $this-&gt;SimpleMock($test, $wildcard);
         }
-        
+
         function _assertTrue($assertion, $message) {
             $test = &amp;$this-&gt;getTest();
             $test-&gt;assertion($message, $assertion);
@@ -711,12 +711,12 @@ $unit_test&gt;assertion('I hope this file exists', file_exists('my_file'));
 <pre>
 &lt;?php
     require_once('simpletst/mock_objects.php');
-    
+
     class MyMock extends SimpleMock() {
         function MyMock($test, $wildcard) {
             $this-&gt;SimpleMock(&amp;$test, $wildcard);
         }
-        
+
         function _assertTrue($assertion, $message , &amp;$test) {
             $test-&gt;assertion($message, $assertion);
         }
@@ -729,7 +729,7 @@ $unit_test&gt;assertion('I hope this file exists', file_exists('my_file'));
                 <em>simple_mock.php</em> et vous pouvez introduire
                 des objets fantaisie dans votre suite de tests existants.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

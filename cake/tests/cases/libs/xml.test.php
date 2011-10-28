@@ -761,7 +761,7 @@ class XmlTest extends CakeTestCase {
 	}
 /**
  * test that empty values do not casefold collapse
- * 
+ *
  * @see http://code.cakephp.org/tickets/view/8
  * @return void
  **/
@@ -797,7 +797,7 @@ class XmlTest extends CakeTestCase {
 				<name>varchar(45)</name>
 			</User>
 		</method>';
-		
+
 		$xml =& new XML($emptyValue);
 		$expected = array(
 			'Method' => array(

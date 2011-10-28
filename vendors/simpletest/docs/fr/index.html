@@ -54,7 +54,7 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 Le présent article présuppose que vous soyez familier avec
                 le concept de tests unitaires ainsi que celui de développement
@@ -69,7 +69,7 @@
                 <a href="http://www.lastcraft.com/first_test_tutorial.php">tutorial
                 sur les tests unitaires</a>.
             </p>
-        
+
         <p><a class="target" name="unit"><h2>Utiliser le testeur rapidement</h2></a></p>
             <p>
                 Parmi les outils de test pour logiciel, le testeur unitaire
@@ -119,7 +119,7 @@ class TestOfLogging extends <strong>UnitTestCase</strong> {
                 inclus. Vous auriez à éditer ces arborescences suivant
                 l'endroit où vous avez installé SimpleTest.
                 Le fichier "autorun.php" fait plus que juste inclure
-                les éléments de SimpleTest : il lance aussi les tests pour nous.  
+                les éléments de SimpleTest : il lance aussi les tests pour nous.
             </p>
             <p>
                 <span class="new_code">TestOfLogging</span> est notre premier scénario de test
@@ -200,7 +200,7 @@ class TestOfLogging extends UnitTestCase {
                     <b>Fatal error</b>:  Failed opening required '../classes/log.php' (include_path='') in <b>/home/marcus/projects/lastcraft/tutorial_tests/Log/tests/log_test.php</b> on line <b>7</b>
                 </div>
                 c'est qu'il vous manque le fichier <em>classes/Log.php</em>
-                qui pourrait ressembler à : 
+                qui pourrait ressembler à :
 <pre>
 &lt;?php<strong>
 class Log {
@@ -214,14 +214,14 @@ class Log {
 </pre>
                 C'est largement plus sympathique d'écrire le code après le test.
                 Plus que sympatique même - cette technique s'appelle
-                "Développement Piloté par les Tests" ou 
+                "Développement Piloté par les Tests" ou
                 "Test Driven Development" en anglais.
             </p>
             <p>
                 Pour plus de renseignements sur le testeur, voyez la
                 <a href="unit_test_documentation.html">documentation pour les tests de régression</a>.
             </p>
-        
+
         <p><a class="target" name="group"><h2>Construire des groupes de tests</h2></a></p>
             <p>
                 Il est peu probable que dans une véritable application on
@@ -251,7 +251,7 @@ class AllTests extends <strong>TestSuite</strong> {
             <p>
                 La sous-classe <span class="new_code">TestSuite</span> doit chaîner
                 son constructeur. Cette limitation sera supprimée dans
-                les versions à venir.   
+                les versions à venir.
             </p>
             <p>
                 The method <span class="new_code">TestSuite::addFile()</span>
@@ -307,7 +307,7 @@ class AllTests extends <strong>TestSuite</strong> {
                 Pour plus de renseignements des groupes de tests, voyez le
                 <a href="group_test_documentation.html">documentation sur le groupement des tests</a>.
             </p>
-        
+
         <p><a class="target" name="mock"><h2>Utiliser les objets fantaisie</h2></a></p>
             <p>
                 Avançons un peu plus dans le futur.
@@ -340,15 +340,15 @@ require_once('../classes/log.php');
 <strong>require_once('../classes/session_pool.php');</strong>
 
 class <strong>TestOfSessionLogging</strong> extends UnitTestCase {
-    
+
     function setUp() {
         <strong>@unlink('/temp/test.log');</strong>
     }
-    
+
     function tearDown() {
         <strong>@unlink('/temp/test.log');</strong>
     }
-    
+
     function testLoggingInIsLogged() {
         <strong>$log = new Log('/temp/test.log');
         $session_pool = &amp;new SessionPool($log);
@@ -371,7 +371,7 @@ class <strong>TestOfSessionLogging</strong> extends UnitTestCase {
                 entre la classe <span class="new_code">Log</span> et ce test. Que se
                 passerait-il si nous n'utilisions plus de fichiers, mais la
                 bibliothèque <em>syslog</em> à la place ?
-                
+
                 Cela veut dire que notre test <span class="new_code">TestOfSessionLogging</span>
                 enverra un échec alors même qu'il ne teste pas Logging.
             </p>
@@ -409,7 +409,7 @@ require_once('../classes/session_pool.php');
 <strong>Mock::generate('Log');</strong>
 
 class TestOfSessionLogging extends UnitTestCase {
-    
+
     function testLoggingInIsLogged() {<strong>
         $log = &amp;new MockLog();
         $log-&gt;expectOnce('message', array('User fred logged in.'));</strong>
@@ -435,7 +435,7 @@ class TestOfSessionLogging extends UnitTestCase {
                 éternité l'appel de la méthode sans jamais prévenir le
                 scénario de test. Les autres tests sont déclenchés
                 automatiquement quand l'appel à <span class="new_code">message()</span> est
-                invoqué sur l'objet <span class="new_code">MockLog</span> par le code 
+                invoqué sur l'objet <span class="new_code">MockLog</span> par le code
                 <span class="new_code">SessionPool::logIn()</span>.
                 L'appel <span class="new_code">mock</span> va déclencher une comparaison des
                 paramètres et ensuite envoyer le message "pass" ou "fail"
@@ -460,7 +460,7 @@ class TestOfSessionLogging extends UnitTestCase {
                 Pour plus de renseignements sur les objets fantaisie, voyez le
                 <a href="mock_objects_documentation.html">documentation sur les objets fantaisie</a>.
             </p>
-        
+
         <p><a class="target" name="web"><h2>Tester une page web</h2></a></p>
             <p>
                 Une des exigences des sites web, c'est qu'ils produisent
@@ -527,7 +527,7 @@ class TestOfRankings extends WebTestCase {
             <p>
                 <a href="http://sourceforge.net/projects/simpletest/"><img src="http://sourceforge.net/sflogo.php?group_id=76550&amp;type=5" width="210" height="62" border="0" alt="SourceForge.net Logo"></a>
             </p>
-        
+
     </div>
         References and related information...
         <ul>

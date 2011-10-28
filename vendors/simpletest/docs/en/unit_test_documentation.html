@@ -71,15 +71,15 @@ class FileTestCase extends UnitTestCase {
     function FileTestCase() {
         $this-&gt;UnitTestCase('File test');
     }<strong>
-    
+
     function setUp() {
         @unlink('../temp/test.txt');
     }
-    
+
     function tearDown() {
         @unlink('../temp/test.txt');
     }
-    
+
     function testCreation() {
         $writer = &amp;new FileWriter('../temp/test.txt');
         $writer-&gt;write('Hello');
@@ -290,7 +290,7 @@ trigger_error('Catastrophe');
 </tr>
                 </tbody></table>
             </p>
-        
+
         <p><a class="target" name="extending_unit"><h2>Extending test cases</h2></a></p>
             <p>
                 Of course additional test methods can be added to create
@@ -302,7 +302,7 @@ class FileTester extends UnitTestCase {
     function FileTester($name = false) {
         $this-&gt;UnitTestCase($name);
     }
-    
+
     function assertFileExists($filename, $message = '%s') {
         $this-&gt;assertTrue(
                 file_exists($filename),
@@ -328,15 +328,15 @@ class FileTester extends UnitTestCase {
                 a normal test case...
 <pre>
 class FileTestCase extends <strong>FileTester</strong> {
-    
+
     function setUp() {
         @unlink('../temp/test.txt');
     }
-    
+
     function tearDown() {
         @unlink('../temp/test.txt');
     }
-    
+
     function testCreation() {
         $writer = &amp;new FileWriter('../temp/test.txt');
         $writer-&gt;write('Hello');<strong>
@@ -357,7 +357,7 @@ class FileTestCase extends <strong>FileTester</strong> {
                 want to incorporate other unit tester's
                 test cases in your test suites.
             </p>
-        
+
         <p><a class="target" name="running_unit"><h2>Running a single test case</h2></a></p>
             <p>
                 You won't often run single test cases except when bashing
@@ -384,7 +384,7 @@ class FileTestCase extends UnitTestCase {
                 This script will run as is, but of course will output zero passes
                 and zero failures until test methods are added.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

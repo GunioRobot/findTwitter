@@ -98,10 +98,10 @@ class TestOfNewsService extends UnitTestCase {
                 'Cannot connect to news service ' .
                 '"BBC News" at this time. ' .
                 'Please try again later.'));
-        
+
         $service = &amp;new NewsService('BBC News');
         $service-&gt;publish($writer);
-        
+
         $writer-&gt;tally();</strong>
     }
 }
@@ -124,10 +124,10 @@ class TestOfNewsService extends UnitTestCase {
         $writer-&gt;expectOnce(
                 'write',
                 array(new WantedPatternExpectation('/cannot connect/i')));</strong>
-        
+
         $service = &amp;new NewsService('BBC News');
         $service-&gt;publish($writer);
-        
+
         $writer-&gt;tally();
     }
 }
@@ -197,7 +197,7 @@ class TestOfNewsService extends UnitTestCase {
                 <span class="new_code">IsAExpectation</span> et <span class="new_code">NotAExpectation</span>,
                 qui prennent un type ou un nom de classe comme chaîne.
             </p>
-        
+
         <p><a class="target" name="comportement"><h2>Utiliser les attentes pour contrôler les bouchons serveur</h2></a></p>
             <p>
                 Les classes attente peuvent servir à autre chose
@@ -236,7 +236,7 @@ $authorisation-&gt;setReturnValue('isAllowed', false);</strong>
                 Ce niveau de sophistication est rarement utile :
                 il n'est inclut que pour être complet.
             </p>
-        
+
         <p><a class="target" name="etendre"><h2>Créer vos propres attentes</h2></a></p>
             <p>
                 Les classes d'attentes ont une structure très simple.
@@ -251,16 +251,16 @@ $authorisation-&gt;setReturnValue('isAllowed', false);</strong>
                 <span class="new_code">SimpleExpectation</span>...
 <pre>
 <strong>class ValidIp extends SimpleExpectation {
-    
+
     function test($ip) {
         return (ip2long($ip) != -1);
     }
-    
+
     function testMessage($ip) {
         return "Address [$ip] should be a valid IP address";
     }
 }</strong>
-</pre> 
+</pre>
                Il n'y a véritablement que deux méthodes à mettre en place.
                La méthode <span class="new_code">test()</span> devrait renvoyer un <span class="new_code">true</span>
                si l'attente doit passer, et une erreur <span class="new_code">false</span>
@@ -271,7 +271,7 @@ $authorisation-&gt;setReturnValue('isAllowed', false);</strong>
                 Cette classe peut désormais être employée à la place
                 des classes d'attente précédentes.
             </p>
-        
+
         <p><a class="target" name="unitaire"><h2>Sous le capot du testeur unitaire</h2></a></p>
             <p>
                 Le <a href="http://sourceforge.net/projects/simpletest/">framework
@@ -311,7 +311,7 @@ class TestOfNetworking extends UnitTestCase {
     function assertValidIp($ip, $message = '%s') {
         $this-&gt;assertExpectation(new ValidIp(), $ip, $message);
     }</strong>
-    
+
     function testGetValidIp() {
         $server = &amp;new Server();<strong>
         $this-&gt;assertValidIp(
@@ -330,7 +330,7 @@ class TestOfNetworking extends UnitTestCase {
                 de système qui étendront le framework de test
                 pour leurs propres outils de test.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

@@ -559,7 +559,7 @@ class FormHelper extends AppHelper {
 /**
  * Generates a form input element complete with label and wrapper div
  *
- * Options - See each field type method for more information. Any options that are part of 
+ * Options - See each field type method for more information. Any options that are part of
  * $attributes or $options for the different type methods can be included in $options for input().
  *
  * - 'type' - Force the type of widget you want. e.g. ```type => 'select'```
@@ -1088,7 +1088,7 @@ class FormHelper extends AppHelper {
  *  extension .jpg, .jpe, .jpeg, .gif, .png use an image if the extension
  *  exists, AND the first character is /, image is relative to webroot,
  *  OR if the first character is not /, image is relative to webroot/img.
- * @param array $options 
+ * @param array $options
  * @return string A HTML submit button
  */
 	function submit($caption = null, $options = array()) {
@@ -1852,10 +1852,10 @@ class FormHelper extends AppHelper {
 	}
 /**
  * Sets field defaults and adds field to form security input hash
- * 
+ *
  * Options
  *  - secure - boolean whether or not the the field should be added to the security fields.
- * 
+ *
  * @param string $field
  * @param array $options
  * @return array

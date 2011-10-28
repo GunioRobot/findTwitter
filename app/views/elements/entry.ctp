@@ -6,8 +6,8 @@
     </p>
     <p class="file">
       <small>
-      Posted at <?php echo h($twitter->getUpdated($v)); ?> | 
-      <?php echo $html->link('permlink', $twitter->getPermlink($v)); ?> | 
+      Posted at <?php echo h($twitter->getUpdated($v)); ?> |
+      <?php echo $html->link('permlink', $twitter->getPermlink($v)); ?> |
       <?php echo $v['source']; ?>
       </small>
     </p>

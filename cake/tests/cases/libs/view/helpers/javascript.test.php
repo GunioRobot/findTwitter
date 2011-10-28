@@ -826,7 +826,7 @@ class JavascriptTest extends CakeTestCase {
 		ob_start();
 		$this->Javascript->afterRender();
 		$result = ob_get_clean();
-		
+
 		$expected = array(
 			'script' => array('type' => 'text/javascript'),
 			$this->cDataStart,

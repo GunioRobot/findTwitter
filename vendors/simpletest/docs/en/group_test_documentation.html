@@ -179,7 +179,7 @@ class SocketTester extends UnitTestCase { ... }
                     </li>
                 </ol>
             </p>
-        
+
         <p><a class="target" name="higher"><h2>Composite suites</h2></a></p>
             <p>
                 The above method places all of the test cases into one large group.
@@ -280,7 +280,7 @@ class SocketTester extends UnitTestCase { ... }
 ?&gt;
 </pre>
             </p>
-        
+
         <p><a class="target" name="legacy"><h2>Integrating legacy test cases</h2></a></p>
             <p>
                 If you already have unit tests for your code or are extending external
@@ -298,7 +298,7 @@ class SocketTester extends UnitTestCase { ... }
     function ConfigFileTest() {
         $this-&gt;TestCase('Config file test');
     }
-    
+
     function testContents() {
         $config = new ConfigFile('test.conf');
         $this-&gt;assertRegexp('/me/', $config-&gt;getValue('username'));
@@ -343,7 +343,7 @@ class SocketTester extends UnitTestCase { ... }
                 which would mean shipping it with valid PEAR::PhpUnit test
                 cases.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

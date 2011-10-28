@@ -78,15 +78,15 @@ class FileTestCase extends UnitTestCase {
     function FileTestCase() {
         $this-&gt;UnitTestCase('File test');
     }<strong>
-    
+
     function setUp() {
         @unlink('../temp/test.txt');
     }
-    
+
     function tearDown() {
         @unlink('../temp/test.txt');
     }
-    
+
     function testCreation() {
         $writer = &amp;new FileWriter('../temp/test.txt');
         $writer-&gt;write('Hello');
@@ -305,7 +305,7 @@ $this-&gt;assertNoErrors();</strong>
 </tr>
                 </tbody></table>
             </p>
-        
+
         <p><a class="target" name="extension_unitaire"><h2>Etendre les scénarios de test</h2></a></p>
             <p>
                 Bien sûr des méthodes supplémentaires de test
@@ -318,7 +318,7 @@ class FileTester extends UnitTestCase {
     function FileTester($name = false) {
         $this-&gt;UnitTestCase($name);
     }
-    
+
     function assertFileExists($filename, $message = '%s') {
         $this-&gt;assertTrue(
                 file_exists($filename),
@@ -339,15 +339,15 @@ class FileTester extends UnitTestCase {
                 comme un scénario de test classique...
 <pre>
 class FileTestCase extends <strong>FileTester</strong> {
-    
+
     function setUp() {
         @unlink('../temp/test.txt');
     }
-    
+
     function tearDown() {
         @unlink('../temp/test.txt');
     }
-    
+
     function testCreation() {
         $writer = &amp;new FileWriter('../temp/test.txt');
         $writer-&gt;write('Hello');<strong>
@@ -368,7 +368,7 @@ class FileTestCase extends <strong>FileTester</strong> {
                 si vous souhaitez incorporer les scénarios
                 d'autres testeurs unitaires dans votre suite de test.
             </p>
-        
+
         <p><a class="target" name="lancement_unitaire"><h2>Lancer un unique scénario de test</h2></a></p>
             <p>
                 Ce n'est pas souvent qu'il faille lancer des scénarios
@@ -398,7 +398,7 @@ class FileTestCase extends UnitTestCase {
                 Ce script sera lancé tel que mais il n'y aura
                 aucun succès ou échec avant que des méthodes de test soient ajoutées.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

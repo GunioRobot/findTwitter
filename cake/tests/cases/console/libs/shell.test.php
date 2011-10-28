@@ -52,7 +52,7 @@ class TestShell extends Shell {
  *
  * @var name
  * @access public
- */	
+ */
 	var $name = 'TestShell';
 }
 /**

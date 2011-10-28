@@ -166,7 +166,7 @@ class SimpleFormTests extends WebTestCase {
                 <ul>
                     <li>Champs texte, y compris les champs masqués (hidden) ou cryptés (password).</li>
                     <li>Boutons submit, en incluant aussi la balise button, mais pas encore les boutons reset</li>
-                    <li>Aires texte (textarea) avec leur gestion des retours à la ligne (wrap).</li> 
+                    <li>Aires texte (textarea) avec leur gestion des retours à la ligne (wrap).</li>
                     <li>Cases à cocher, y compris les cases à cocher multiples dans un même formulaire.</li>
                     <li>Listes à menu déroulant, y compris celles à sélections multiples.</li>
                     <li>Boutons radio.</li>
@@ -185,7 +185,7 @@ class SimpleFormTests extends WebTestCase {
                 réalisées avec les commandes classiques de SimpleTest.
                 Une méthode alternative est proposée plus loin.
             </p>
-        
+
         <p><a class="target" name="multiple"><h2>Champs à valeurs multiples</h2></a></p>
             <p>
                 SimpleTest peut gérer deux types de commandes à valeur multiple :
@@ -244,7 +244,7 @@ class SimpleFormTests extends WebTestCase {
                 pour confirmer cet effet, peut-être en nous connectant
                 comme utilisateur et en essayant d'effectuer une mise à jour.
             </p>
-        
+
         <p><a class="target" name="hidden-field"><h2>Formulaires utilisant Javascript pour changer un champ caché</h2></a></p>
             <p>
                 Si vous souhaitez tester un formulaire dépendant de Javascript
@@ -280,7 +280,7 @@ class SimpleFormTests extends WebTestCase {
                 <a href="http://selenium.openqa.org/">Selenium</a> pour mettre sur pied
                 un test de recette complet.
             </p>
-        
+
         <p><a class="target" name="brut"><h2>Envoi brut</h2></a></p>
             <p>
                 Si vous souhaitez tester un gestionnaire de formulaire
@@ -288,7 +288,7 @@ class SimpleFormTests extends WebTestCase {
                 pas encore accès, vous pouvez créer un envoi de formulaire à la main.
 <pre>
 class SimpleFormTests extends WebTestCase {
-    ...<strong>    
+    ...<strong>
     function testAttemptedHack() {
         $this-&gt;post(
                 'http://www.my-site.com/add_user.php',
@@ -300,7 +300,7 @@ class SimpleFormTests extends WebTestCase {
                 En ajoutant des données à la méthode <span class="new_code">WebTestCase::post()</span>,
                 nous essayons de télécharger la page via la transmission d'un formulaire.
             </p>
-        
+
     </div>
         References and related information...
         <ul>
@@ -312,7 +312,7 @@ class SimpleFormTests extends WebTestCase {
             La page de téléchargement de SimpleTest sur
             <a href="http://www.lastcraft.com/simple_test.php">LastCraft</a>.
         </li>
-<li> 
+<li>
            <a href="http://simpletest.org/api/">L'API du développeur pour SimpleTest</a>
            donne tous les détails sur les classes et les assertions disponibles.
         </li>

@@ -33,7 +33,7 @@
 class CounterCachePostFixture extends CakeTestFixture {
 
 	var $name = 'CounterCachePost';
-    
+
 	var $fields = array(
 		'id' => array('type' => 'integer', 'key' => 'primary'),
 		'title' => array('type' => 'string', 'length' => 255, 'null' => false),

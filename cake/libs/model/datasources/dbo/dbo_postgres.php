@@ -441,13 +441,13 @@ class DboPostgres extends DboSource {
 		if ($table) {
 			$indexes = $this->query("SELECT c2.relname, i.indisprimary, i.indisunique, i.indisclustered, i.indisvalid, pg_catalog.pg_get_indexdef(i.indexrelid, 0, true) as statement, c2.reltablespace
 			FROM pg_catalog.pg_class c, pg_catalog.pg_class c2, pg_catalog.pg_index i
-			WHERE c.oid  = ( 
-				SELECT c.oid 
-				FROM pg_catalog.pg_class c LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace 
-				WHERE c.relname ~ '^(" . $table . ")$' 
-					AND pg_catalog.pg_table_is_visible(c.oid) 
+			WHERE c.oid  = (
+				SELECT c.oid
+				FROM pg_catalog.pg_class c LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+				WHERE c.relname ~ '^(" . $table . ")$'
+					AND pg_catalog.pg_table_is_visible(c.oid)
 					AND n.nspname ~ '^(" . $this->config['schema'] . ")$'
-			) 
+			)
 			AND c.oid = i.indrelid AND i.indexrelid = c2.oid
 			ORDER BY i.indisprimary DESC, i.indisunique DESC, c2.relname", false);
 			foreach ($indexes as $i => $info) {
@@ -528,7 +528,7 @@ class DboPostgres extends DboSource {
 					}
 					$colList[] = 'ADD PRIMARY KEY (' . $cols . ')';
 				}
-				
+
 				if (!empty($colList)) {
 					$out .= "\t" . join(",\n\t", $colList) . ";\n\n";
 				} else {
@@ -545,7 +545,7 @@ class DboPostgres extends DboSource {
  * @param string $table Table to alter indexes for
  * @param array $new Indexes to add and drop
  * @return array Index alteration statements
- */	
+ */
 	function _alterIndexes($table, $indexes) {
 		$alter = array();
 		if (isset($indexes['drop'])) {

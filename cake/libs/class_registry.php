@@ -74,11 +74,11 @@ class ClassRegistry {
  *
  * Examples
  * Simple Use: Get a Post model instance ```ClassRegistry::init('Post');```
- * 
+ *
  * Exapanded: ```array('class' => 'ClassName', 'alias' => 'AliasNameStoredInTheRegistry', 'type' => 'TypeOfClass');```
- * 
+ *
  * Model Classes can accept optional ```array('id' => $id, 'table' => $table, 'ds' => $ds, 'alias' => $alias);```
- * 
+ *
  * When $class is a numeric keyed array, multiple class instances will be stored in the registry,
  *  no instance of the object will be returned
  * {{{

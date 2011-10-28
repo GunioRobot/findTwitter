@@ -566,7 +566,7 @@ class DboSqlite extends DboSource {
 		}
 		return $index;
 	}
-	
+
 /**
  * Overrides DboSource::renderStatement to handle schema generation with SQLite-style indexes
  *

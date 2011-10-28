@@ -48,7 +48,7 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 SimpleTest suit plutôt plus que moins le modèle MVC (Modèle-Vue-Contrôleur).
                 Les classes "reporter" sont les vues et les modèles
@@ -62,7 +62,7 @@
                 le contrôleur est plutôt indéfini et il existe d'autres endroits
                 pour contrôler l'exécution des tests.
             </p>
-        
+
         <p><a class="target" name="html"><h2>Les résultats rapportés au format HTML</h2></a></p>
             <p>
                 L'affichage par défaut est minimal à l'extrême.
@@ -236,7 +236,7 @@ class HtmlReporter extends SimpleReporter {
                 aussi bien les succès que les échecs et les erreurs...
 <pre><strong>
 class ShowPasses extends HtmlReporter {
-    
+
     function paintPass($message) {
         parent::paintPass($message);
         print "&amp;&lt;span class=\"pass\"&gt;Pass&lt;/span&gt;: ";
@@ -245,7 +245,7 @@ class ShowPasses extends HtmlReporter {
         print implode("-&amp;gt;", $breadcrumb);
         print "-&amp;gt;$message&lt;br /&gt;\n";
     }
-    
+
     function _getCss() {
         return parent::_getCss() . ' .pass { color: green; }';
     }
@@ -274,13 +274,13 @@ class ShowPasses extends HtmlReporter {
                 que les évènements d'affichage, cela devient
                 facilement réalisable.
             </p>
-        
+
         <p><a class="target" name="autre"><h2>Etendre le rapporteur</h2></a></p>
             <p>
                 Plutôt que de modifier l'affichage existant,
                 vous voudrez peut-être produire une présentation HTML
                 complètement différente, ou même générer une version texte ou XML.
-                Plutôt que de surcharger chaque méthode dans 
+                Plutôt que de surcharger chaque méthode dans
                 <span class="new_code">HtmlReporter</span> nous pouvons nous rendre
                 une étape plus haut dans la hiérarchie de classe vers
                 <span class="new_code">SimpleReporter</span> dans le fichier source <em>simple_test.php</em>.
@@ -295,22 +295,22 @@ class MyDisplay extends SimpleReporter {<strong>
     </strong>
     function paintHeader($test_name) {
     }
-    
+
     function paintFooter($test_name) {
     }
-    
+
     function paintStart($test_name, $size) {<strong>
         parent::paintStart($test_name, $size);</strong>
     }
-    
+
     function paintEnd($test_name, $size) {<strong>
         parent::paintEnd($test_name, $size);</strong>
     }
-    
+
     function paintPass($message) {<strong>
         parent::paintPass($message);</strong>
     }
-    
+
     function paintFail($message) {<strong>
         parent::paintFail($message);</strong>
     }
@@ -318,7 +318,7 @@ class MyDisplay extends SimpleReporter {<strong>
 </pre>
                 Aucune sortie ne viendrait de cette classe jusqu'à un ajout de votre part.
             </p>
-        
+
         <p><a class="target" name="cli"><h2>Le rapporteur en ligne de commande</h2></a></p>
             <p>
                 SimpleTest est aussi livré avec un rapporteur
@@ -400,7 +400,7 @@ $test-&gt;run(new HtmlReporter());
 </pre>
                 Il s'agit là de la forme utilisée par SimpleTest lui-même.
             </p>
-        
+
         <p><a class="target" name="xml"><h2>Test distant</h2></a></p>
             <p>
                 SimpleTest est livré avec une classe <span class="new_code">XmlReporter</span>
@@ -485,7 +485,7 @@ $test-&gt;run(new HtmlReporter());
                 <span class="new_code">RemoteTestCase</span> peut être ajouté à
                 une suite de test comme n'importe quel autre groupe de tests.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

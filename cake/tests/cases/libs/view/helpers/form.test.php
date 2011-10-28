@@ -3165,7 +3165,7 @@ class FormHelperTest extends CakeTestCase {
 		);
 		$this->assertTags($result, $expected);
 	}
-	
+
 /**
  * Test that specifying false in the 'disabled' option will not disable either the hidden input or the checkbox input
  *
@@ -3179,7 +3179,7 @@ class FormHelperTest extends CakeTestCase {
 		);
 		$this->assertTags($result, $expected);
 	}
-	
+
 /**
  * testDateTime method
  *

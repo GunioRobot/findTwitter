@@ -47,7 +47,7 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 Un objet fantaisie partiel n'est ni plus ni moins
                 qu'un modèle de conception pour soulager un problème spécifique
@@ -59,7 +59,7 @@
                 à plus d'une occasion et qu'elle m'a épargnée
                 pas mal de travail dans ces moments-là.
             </p>
-        
+
         <p><a class="target" name="injection"><h2>Le problème de l'injection dans un objet fantaisie</h2></a></p>
             <p>
                 Quand un objet en utilise un autre il est très simple
@@ -230,7 +230,7 @@ class TelnetTest extends UnitTestCase {
             <p>
                 Peut-on trouver un juste milieu ?
             </p>
-        
+
         <p><a class="target" name="creation"><h2>Méthode fabrique protégée</h2></a></p>
             <p>
                 Il existe une technique pour palier à ce problème
@@ -248,7 +248,7 @@ class Telnet {
         $socket-&gt;read( ... );
         ...
     }<strong>
-    
+
     function &amp;_createSocket($ip, $port) {
         return new Socket($ip, $port);
     }</strong>
@@ -263,12 +263,12 @@ class Telnet {
 <pre>
 <strong>class TelnetTestVersion extends Telnet {
     var $_mock;
-    
+
     function TelnetTestVersion(&amp;$mock) {
         $this-&gt;_mock = &amp;$mock;
         $this-&gt;Telnet();
     }
-    
+
     function &amp;_createSocket() {
         return $this-&gt;_mock;
     }
@@ -278,7 +278,7 @@ class Telnet {
                 mais un setter aurait fonctionné tout aussi bien.
                 Notez bien que la fantaisie est placée dans une variable
                 d'objet avant que le constructeur ne soit attaché.
-                C'est nécessaire dans le cas où le constructeur appelle 
+                C'est nécessaire dans le cas où le constructeur appelle
                 <span class="new_code">connect()</span>.
                 Autrement il pourrait donner un valeur nulle à partir de
                 <span class="new_code">_createSocket()</span>.
@@ -307,7 +307,7 @@ class TelnetTest extends UnitTestCase {
                 Il se pourrait bien que nous ayons à réaliser cette astuce régulièrement :
                 serait-il possible d'automatiser la création de cette sous-classe ?
             </p>
-        
+
         <p><a class="target" name="partiel"><h2>Un objet fantaisie partiel</h2></a></p>
             <p>
                 Bien sûr la réponse est "oui"
@@ -384,7 +384,7 @@ class TelnetTest extends UnitTestCase {
 }
 </pre>
             </p>
-        
+
         <p><a class="target" name="moins"><h2>Tester moins qu'une classe</h2></a></p>
             <p>
                 Les méthodes issues d'un objet fantaisie n'ont pas
@@ -409,7 +409,7 @@ class TelnetTest extends UnitTestCase {
                 Pour choisir le mécanisme à utiliser, on en revient
                 toujours aux standards de code de votre projet.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

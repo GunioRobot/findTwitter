@@ -44,13 +44,13 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 Un des secteurs à la fois délicat et important lors d'un test
                 de site web reste la sécurité. Tester ces schémas est au coeur
                 des objectifs du testeur web de SimpleTest.
             </p>
-        
+
         <p><a class="target" name="basique"><h2>Authentification HTTP basique</h2></a></p>
             <p>
                 Si vous allez chercher une page web protégée
@@ -142,7 +142,7 @@ class AuthenticationTest extends WebTestCase {
                  le serveur testé des regards malveillants.
                  Les authentifications Digest et NTLM pourraient être ajoutées prochainement.
             </p>
-        
+
         <p><a class="target" name="cookies"><h2>Cookies</h2></a></p>
             <p>
                 L'authentification de base ne donne pas assez de contrôle
@@ -229,7 +229,7 @@ class LogInTest extends WebTestCase {
 </pre>
                 Votre site est-il protégé contre ce type d'attaque ?
             </p>
-        
+
         <p><a class="target" name="session"><h2>Sessions de navigateur</h2></a></p>
             <p>
                 Si vous testez un système d'authentification,
@@ -244,7 +244,7 @@ class LogInTest extends WebTestCase {
         $this-&gt;setField('p', 'Secret');
         $this-&gt;clickSubmit('Log in');
         $this-&gt;assertWantedPattern('/Welcome Me/');<strong>
-        
+
         $this-&gt;restart();
         $this-&gt;get('http://www.my-site.com/restricted.php');
         $this-&gt;assertWantedPattern('/Access denied/');</strong>
@@ -286,7 +286,7 @@ class LogInTest extends WebTestCase {
                 d'une heure et que tous ceux dont la date d'expiration
                 sera passée auront disparus.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

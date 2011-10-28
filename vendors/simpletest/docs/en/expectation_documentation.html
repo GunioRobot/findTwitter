@@ -99,7 +99,7 @@ class TestOfNewsService extends UnitTestCase {
                 'Cannot connect to news service ' .
                 '"BBC News" at this time. ' .
                 'Please try again later.'));
-        
+
         $service = &amp;new NewsService('BBC News');
         $service-&gt;publish($writer);</strong>
     }
@@ -123,7 +123,7 @@ class TestOfNewsService extends UnitTestCase {
         $writer-&gt;expectOnce(
                 'write',
                 array(new PatternExpectation('/cannot connect/i')));</strong>
-        
+
         $service = &amp;new NewsService('BBC News');
         $service-&gt;publish($writer);
     }
@@ -240,7 +240,7 @@ new WithinMarginExpectation(14.0, 0.001)
 </pre>
                 This will accept any value from 13.999 to 14.001 inclusive.
             </p>
-        
+
         <p><a class="target" name="behaviour"><h2>Using expectations to control stubs</h2></a></p>
             <p>
                 The expectation classes can be used not just for sending assertions
@@ -276,7 +276,7 @@ $authorisation-&gt;setReturnValue('isAllowed', false);</strong>
                 This kind of sophistication is rarely useful, but is included for
                 completeness.
             </p>
-        
+
         <p><a class="target" name="extending"><h2>Creating your own expectations</h2></a></p>
             <p>
                 The expectation classes have a very simple structure.
@@ -291,11 +291,11 @@ $authorisation-&gt;setReturnValue('isAllowed', false);</strong>
                 <span class="new_code">SimpleExpectation</span>...
 <pre>
 <strong>class ValidIp extends SimpleExpectation {
-    
+
     function test($ip) {
         return (ip2long($ip) != -1);
     }
-    
+
     function testMessage($ip) {
         return "Address [$ip] should be a valid IP address";
     }
@@ -313,7 +313,7 @@ $authorisation-&gt;setReturnValue('isAllowed', false);</strong>
                 This class can now be used in place of the earlier expectation
                 classes.
             </p>
-        
+
         <p><a class="target" name="unit"><h2>Under the bonnet of the unit tester</h2></a></p>
             <p>
                 The <a href="http://sourceforge.net/projects/simpletest/">SimpleTest unit testing framework</a>
@@ -354,7 +354,7 @@ class TestOfNetworking extends UnitTestCase {
     function assertValidIp($ip, $message = '%s') {
         $this-&gt;assert(new ValidIp(), $ip, $message);
     }</strong>
-    
+
     function testGetValidIp() {
         $server = &amp;new Server();<strong>
         $this-&gt;assertValidIp(
@@ -372,7 +372,7 @@ class TestOfNetworking extends UnitTestCase {
                 These mechanisms are really of most use to authors of systems
                 that will extend the test framework to create their own tool set.
             </p>
-        
+
     </div>
         References and related information...
         <ul>

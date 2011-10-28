@@ -48,7 +48,7 @@
         </li>
 </ul>
 <div class="content">
-        
+
             <p>
                 SimpleTest pretty much follows the MVC pattern
                 (Model-View-Controller).
@@ -61,7 +61,7 @@
                 As usual with MVC, the controller is mostly undefined
                 and there are other places to control the test run.
             </p>
-        
+
         <p><a class="target" name="html"><h2>Reporting results in HTML</h2></a></p>
             <p>
                 The default test display is minimal in the extreme.
@@ -232,7 +232,7 @@ class HtmlReporter extends SimpleReporter {
                 the passes as well as the failures and errors...
 <pre>
 <strong>class ShowPasses extends HtmlReporter {
-    
+
     function paintPass($message) {
         parent::paintPass($message);
         print "&amp;&lt;span class=\"pass\"&gt;Pass&lt;/span&gt;: ";
@@ -241,7 +241,7 @@ class HtmlReporter extends SimpleReporter {
         print implode("-&amp;gt;", $breadcrumb);
         print "-&amp;gt;$message&lt;br /&gt;\n";
     }
-    
+
     function _getCss() {
         return parent::_getCss() . ' .pass { color: green; }';
     }
@@ -268,7 +268,7 @@ class HtmlReporter extends SimpleReporter {
                 With a reporter set to dry run that just sends drawing events
                 this is easily accomplished.
             </p>
-        
+
         <p><a class="target" name="other"><h2>Extending the reporter</h2></a></p>
             <p>
                 Rather than simply modifying the existing display, you might want to
@@ -288,22 +288,22 @@ class MyDisplay extends SimpleReporter {<strong>
     </strong>
     function paintHeader($test_name) {
     }
-    
+
     function paintFooter($test_name) {
     }
-    
+
     function paintStart($test_name, $size) {<strong>
         parent::paintStart($test_name, $size);</strong>
     }
-    
+
     function paintEnd($test_name, $size) {<strong>
         parent::paintEnd($test_name, $size);</strong>
     }
-    
+
     function paintPass($message) {<strong>
         parent::paintPass($message);</strong>
     }
-    
+
     function paintFail($message) {<strong>
         parent::paintFail($message);</strong>
     }
@@ -311,7 +311,7 @@ class MyDisplay extends SimpleReporter {<strong>
 </pre>
                 No output would come from this class until you add it.
             </p>
-        
+
         <p><a class="target" name="cli"><h2>The command line reporter</h2></a></p>
             <p>
                 SimpleTest also ships with a minimal command line reporter.
@@ -390,7 +390,7 @@ $test-&gt;run(new HtmlReporter());
 </pre>
                 This is the form used within SimpleTest itself.
             </p>
-        
+
         <p><a class="target" name="xml"><h2>Remote testing</h2></a></p>
             <p>
                 SimpleTest ships with an <span class="new_code">XmlReporter</span> class
@@ -425,7 +425,7 @@ $test-&gt;run(new HtmlReporter());
 <pre>
 &lt;?php
 require_once('simpletest/xml.php');
-    
+
 ...
 $parser = &amp;new SimpleTestXmlParser(new HtmlReporter());
 $parser-&gt;parse($test_output);
@@ -456,10 +456,10 @@ $parser-&gt;parse($test_output);
 &lt;?php
 <strong>require_once('../remote.php');</strong>
 require_once('../reporter.php');
-    
+
 $test_url = ...;
 $dry_url = ...;
-    
+
 $test = &amp;new TestSuite('Remote tests');
 $test-&gt;addTestCase(<strong>new RemoteTestCase($test_url, $dry_url)</strong>);
 $test-&gt;run(new HtmlReporter());
@@ -472,7 +472,7 @@ $test-&gt;run(new HtmlReporter());
                 The <span class="new_code">RemoteTestCase</span> can be added to test suites
                 just like any other group test.
             </p>
-        
+
     </div>
         References and related information...
         <ul>
